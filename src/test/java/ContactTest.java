@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class ContactTest {
@@ -30,7 +29,7 @@ public class ContactTest {
 
     @AfterMethod
     public void postCondition(){
-    //    wd.quit();
+     // wd.quit();
     }
 
 }

@@ -15,12 +15,12 @@ public class FirstTest {
    // wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home).");
   }
 
-  @Test(enabled = true)//так мы просим не запускать этт тест
+  @Test(enabled = true)
   public void startGoogle(){
       //add new contact
    // wd.get("https://www.google.com/");
     wd.navigate().to("https://www.google.com/");
-   // wd.navigate().to(); позволяет несколько больше нежели метод get
+   // wd.navigate().to();
   }
 
   @Test
@@ -31,7 +31,7 @@ public class FirstTest {
   @AfterMethod
   public void postCondition(){
       //logout
-   // wd.quit();-закрывает все окна
-    wd.close();//-закрывает только то окно, на котором я нахожусь
+   /* wd.quit();-закрывает все окна
+   // wd.close();//-закрывает только то окно, на котором я нахожусь*/
   }
 }
