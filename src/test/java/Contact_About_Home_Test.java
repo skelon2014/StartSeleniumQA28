@@ -79,7 +79,7 @@ public class Contact_About_Home_Test {
 
         //By.name
         //wd.findElement(By.name("namename"));Head
-        wd.findElement(By.cssSelector("[name='namename']"));
+      //  wd.findElement(By.cssSelector("[name='namename']"));
        //By.linkText - старая стратегия
         wd.findElement(By.linkText("LOGIN"));//указываем именно так как в F12
         wd.findElement(By.linkText("ABOUT"));

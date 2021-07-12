@@ -10,11 +10,11 @@ public class PhoneBook_CSS {
     WebDriver wd;
 
     @BeforeMethod
-    public void preCondition() {
+    public void preCondition() throws InterruptedException {
         wd = new ChromeDriver();
-        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
-    }
+        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app");
 
+    }
     @Test
     public void login() throws InterruptedException {
         wd.findElement(By.cssSelector("[href = '/login']")).click();
@@ -28,9 +28,12 @@ public class PhoneBook_CSS {
         password.clear();
         password.sendKeys("Qwerty$4");
         Thread.sleep(2000);
-        wd.findElement(By.cssSelector("div[class='login_login__3EHKB'] button:nth-child(4)")).click();
+        //wd.findElement(By.cssSelector("div[class='login_login__3EHKB'] button:nth-child(4)")).click();
+        //wd.findElement(By.cssSelector(".login_login__3EHKB' button:nth-child(4)")).click();
+        wd.findElement(By.cssSelector("button:nth-child(4)")).click();
         Thread.sleep(2000);
     }
+
 
     @AfterMethod
     public void postCondition() {

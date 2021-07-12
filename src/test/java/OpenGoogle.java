@@ -20,7 +20,7 @@ public class OpenGoogle {
         wd = new ChromeDriver();
         wait = new WebDriverWait(wd, 1);
         wd.manage().window().maximize();
-        wd.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);//waiting elements
+        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//waiting elements
 
         wd.get("https://www.google.com/");
     }
