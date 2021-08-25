@@ -23,10 +23,19 @@ public class W3schools {
     }
     @Test
     public void w3schoolTest(){
-        List<WebElement> raws = wd.findElements(By.cssSelector("tr"));
-        List<WebElement> columns = wd.findElements(By.cssSelector("tr:last-child td"));
-        List<WebElement> lastColumn = wd.findElements(By.cssSelector("td:last-child"));
-        WebElement findName = wd.findElement(By.cssSelector("tr:nth-child(2) td:nth-child(2)"));
+      //  List<WebElement> raws = wd.findElements(By.cssSelector("tr"));
+        List<WebElement> raws = wd.findElements(By.xpath("//tr"));
+      //  List<WebElement> columns = wd.findElements(By.cssSelector("tr:last-child td"));
+        List<WebElement> columns = wd.findElements(By.xpath("//tr/th"));
+     //   List<WebElement> lastColumn = wd.findElements(By.cssSelector("td:last-child"));
+        List<WebElement> lastColumn = wd.findElements(By.xpath("//td[last()]"));
+      //  List<WebElement> someRaw = wd.findElements(By.cssSelector("tr:last-child td"));
+        List<WebElement> someRaw = wd.findElements(By.xpath("//tr[last()]/td"));
+        for(WebElement el:someRaw)
+        System.out.print(el.getText()+"| ");
+        System.out.println();
+        //WebElement findName = wd.findElement(By.cssSelector("tr:nth-child(2) td:nth-child(2)"));
+        WebElement findName = wd.findElement(By.xpath("//tr[2]/td[2]"));
         System.out.println();
         System.out.println("Number of raws - " + raws.size());
         System.out.println("Number of columns - " + columns.size());
@@ -39,6 +48,10 @@ public class W3schools {
         System.out.println();
         System.out.println("Finded name is " + findName.getText());
         System.out.println();
+        WebElement element2 = wd.findElement(By.xpath("//*[.='Mexico']"));
+        System.out.println(element2.getText());
+        System.out.println(wd.findElement(By.xpath("//*[text()='Maria Anders']")).getText());
+        System.out.println(wd.findElement(By.xpath("//*[contains(text(),'Maria')]")).getText());
 
     }
 

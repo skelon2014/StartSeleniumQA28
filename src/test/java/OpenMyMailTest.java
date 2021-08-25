@@ -25,20 +25,20 @@ public class OpenMyMailTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+     //   driver.quit();
     }
 
     @Test
-    public void openMyMail() {
+    public void openMyMail() throws InterruptedException {
         driver.get("https://mail.ru/");
         driver.manage().window().maximize();
         driver.findElement(By.name("login")).sendKeys("skelon");
-        driver.findElement(By.name("password")).sendKeys("A2@14sdfg");
-        driver.findElement(By.cssSelector("html")).click();
-        driver.findElement(By.name("domain")).click();
-        driver.findElement(By.name("domain")).click();
-        driver.findElement(By.cssSelector(".button")).click();
-        driver.findElement(By.cssSelector("html")).click();
-        driver.findElement(By.cssSelector(".second-button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.cssSelector(".domain-select.svelte-1eyrl7y option[value='@bk.ru'] ")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.name("password")).click();
+        Thread.sleep(1000);
+
+
     }
 }

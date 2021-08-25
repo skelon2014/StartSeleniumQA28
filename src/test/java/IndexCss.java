@@ -25,11 +25,15 @@ public class IndexCss {
     @Test
     public void itemTest() {
         WebElement item1 = wd.findElement(By.cssSelector("#nav ul li:first-child"));
-        item1.click();
-        String item1Text = item1.getText();
+        WebElement item1_1 = wd.findElement(By.xpath("//*[@id='nav']//ul//li[1]"));
+        item1_1.click();
+        String item1Text = item1_1.getText();
 
         WebElement alert = wd.findElement(By.cssSelector("#alert"));
-        String alertText = alert.getText();
+        WebElement alert_1 = wd.findElement(By.xpath("//*[@id='alert']"));
+        WebElement alert_11 = wd.findElement(By.id("alert"));
+
+        String alertText = alert_11.getText();
 
 //        if (alertText.contains(item1Text)) {
 //            System.out.println("Test item1 passed");
@@ -42,15 +46,18 @@ public class IndexCss {
     @Test
     public void phormTest() {
         WebElement name = wd.findElement(By.name("name"));
+        WebElement name_1 = wd.findElement(By.xpath("//*[@name='name']"));
         WebElement surename = wd.findElement(By.cssSelector("[name='surename']"));
-        name.click();
-        name.clear();
-        name.sendKeys("Hello");
-        surename.click();
-        surename.clear();
-        surename.sendKeys("my darling!");
+        WebElement surename_1 = wd.findElement(By.xpath("//*[@name='surename']"));
+        name_1.click();
+        name_1.clear();
+        name_1.sendKeys("Hello");
+        surename_1.click();
+        surename_1.clear();
+        surename_1.sendKeys("my darling!");
         WebElement send = wd.findElement(By.cssSelector("#form1 button.btn"));
-        send.click();
+        WebElement send_1 = wd.findElement(By.xpath("//button[@class='btn']"));
+        send_1.click();
 
         String nameText = name.getText();
         String surenameText = surename.getText();
